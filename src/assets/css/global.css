@@ -1,0 +1,120 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    overflow: hidden;
+  }
+  
+  html {
+    font-family: sans-serif;
+    line-height: 1.15;
+  }
+  
+  body {
+    margin: 0;
+    font-family: PingFangSC-Regular, Chinese Quote, -apple-system,
+      BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+      Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji,
+      Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 14px;
+    font-weight: 400;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #fff;
+  }
+  
+  h1,
+  h2,
+  h4,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    margin: 0;
+    padding: 0;
+  }
+  
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #f2f2f2;
+    margin: 20px 0;
+    padding: 0;
+  }
+  
+  .el-loading-mask.is-fullscreen {
+    cursor: wait;
+  }
+  
+  .el-icon-male {
+    color: #3890ff;
+  }
+  .el-icon-female {
+    color: #f56c6c;
+  }
+  
+  #nprogress .bar {
+    /* background: #ff0000; */
+    position: fixed;
+    z-index: 2031;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+  }
+  
+  #nprogress .spinner {
+    z-index: 2031;
+  }
+  
+  #nprogress .spinner-icon {
+    position: fixed;
+    z-index: 2031;
+    top: 50%;
+    right: 50%;
+  
+    width: 24px;
+    height: 24px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid 4px transparent;
+    border-top-color: #5daf34;
+    border-left-color: #f56c6c;
+    border-radius: 50%;
+    -webkit-animation: nprogress-spinner 400ms linear infinite;
+    animation: nprogress-spinner 400ms linear infinite;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    margin: 1px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(144, 147, 153, 0.5);
+    min-height: 8px;
+    min-width: 150px;
+    border-radius: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical:hover {
+    width: 12px;
+    height: 12px;
+    background: rgba(144, 147, 153, 0.9);
+  }
+  
+  ::-webkit-scrollbar-thumb:horizontal:hover {
+    background: rgba(144, 147, 153, 0.9);
+  }
+  
