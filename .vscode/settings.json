@@ -11,6 +11,10 @@
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatter.html": "prettyhtml",
   "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "printWidth": 120
+    },
+
     "prettier": {
       "semi": true,
       "singleQuote": false,
