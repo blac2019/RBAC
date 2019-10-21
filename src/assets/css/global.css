@@ -38,58 +38,6 @@ a {
   padding: 0;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #f2f2f2;
-  margin: 20px 0;
-  padding: 0;
-}
-
-.el-loading-mask.is-fullscreen {
-  cursor: wait;
-}
-
-.el-icon-male {
-  color: #3890ff;
-}
-.el-icon-female {
-  color: #f56c6c;
-}
-
-#nprogress .bar {
-  /* background: #ff0000; */
-  position: fixed;
-  z-index: 2031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-}
-
-#nprogress .spinner {
-  z-index: 2031;
-}
-
-#nprogress .spinner-icon {
-  position: fixed;
-  z-index: 2031;
-  top: 50%;
-  right: 50%;
-
-  width: 24px;
-  height: 24px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: solid 4px transparent;
-  border-top-color: #5daf34;
-  border-left-color: #f56c6c;
-  border-radius: 50%;
-  -webkit-animation: nprogress-spinner 400ms linear infinite;
-  animation: nprogress-spinner 400ms linear infinite;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

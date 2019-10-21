@@ -11,7 +11,7 @@ import ElementUI from "element-ui";
 Vue.use(ElementUI, { size: "mini" });
 
 // css
-import "element-ui/lib/theme-chalk/index.css";
+import "@src/assets/css/index.scss";
 
 Vue.config.productionTip = false;
 
