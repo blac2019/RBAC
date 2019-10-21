@@ -41,7 +41,7 @@ export const pattern = {
 
   // 百分数验证，数字在1-99之间，保留一位小数
   percente: /^(((\d|[1-9]\d)(\.\d{1,2})?)|100|100.0|100.00)$/
-}
+};
 
 /**
  * 非空验证 正则验证
@@ -54,7 +54,7 @@ export const pattern = {
  * @returns
  */
 export function isEmpty(param) {
-  return param === null || param === undefined || param === ''
+  return param === null || param === undefined || param === "";
 }
 
 /**
@@ -69,7 +69,7 @@ export function isEmpty(param) {
  * @returns
  */
 export function length(param, length) {
-  return param.toString().length() <= length
+  return param.toString().length() <= length;
 }
 
 /**
@@ -86,12 +86,12 @@ export function length(param, length) {
 export function lengthForByte(param, length) {
   // 1个中文字符占3个字节，其他字符占1个字节
   /* eslint-disable no-control-regex */
-  let len = param.toString().replace(/[^\x00-\xff]/g, 'aaa').length
+  let len = param.toString().replace(/[^\x00-\xff]/g, "aaa").length;
 
   if (len > length) {
-    return false
+    return false;
   } else {
-    return true
+    return true;
   }
 }
 
@@ -108,15 +108,15 @@ export function lengthForByte(param, length) {
  * @returns
  */
 export function range(param, iMin, iMax) {
-  let re = /(\d+)/g
+  let re = /(\d+)/g;
 
   while (re.exec(param)) {
-    let int = parseInt(RegExp.$1)
+    let int = parseInt(RegExp.$1);
     if (int < iMin || int > iMax) {
-      return false
+      return false;
     }
 
-    return true
+    return true;
   }
 }
 
@@ -131,7 +131,7 @@ export function range(param, iMin, iMax) {
  * @returns
  */
 export function url(param) {
-  return pattern.url.test(param)
+  return pattern.url.test(param);
 }
 
 /**
@@ -145,7 +145,7 @@ export function url(param) {
  * @returns
  */
 export function number(param) {
-  return pattern.number.test(param)
+  return pattern.number.test(param);
 }
 
 /**
@@ -159,7 +159,7 @@ export function number(param) {
  * @returns
  */
 export function numerical(param) {
-  return pattern.numerical.test(param)
+  return pattern.numerical.test(param);
 }
 
 /**
@@ -173,7 +173,7 @@ export function numerical(param) {
  * @returns
  */
 export function pNumerical(param) {
-  return pattern.pNumerical.test(param)
+  return pattern.pNumerical.test(param);
 }
 
 /**
@@ -187,7 +187,7 @@ export function pNumerical(param) {
  * @returns
  */
 export function interger(param) {
-  return pattern.integer.test(param)
+  return pattern.integer.test(param);
 }
 
 /**
@@ -201,7 +201,7 @@ export function interger(param) {
  * @returns
  */
 export function pInterger(param) {
-  return pattern.pInteger.test(param)
+  return pattern.pInteger.test(param);
 }
 
 /**
@@ -215,7 +215,7 @@ export function pInterger(param) {
  * @returns
  */
 export function nInterger(param) {
-  return pattern.nInterger.test(param)
+  return pattern.nInterger.test(param);
 }
 
 /**
@@ -229,7 +229,7 @@ export function nInterger(param) {
  * @returns
  */
 export function mobile(param) {
-  return pattern.mobile.test(param)
+  return pattern.mobile.test(param);
 }
 
 /**
@@ -243,7 +243,7 @@ export function mobile(param) {
  * @returns
  */
 export function telephone(param) {
-  return pattern.telephone.test(param)
+  return pattern.telephone.test(param);
 }
 
 /**
@@ -257,7 +257,7 @@ export function telephone(param) {
  * @returns
  */
 export function idCard(param) {
-  return pattern.idCard.test(param)
+  return pattern.idCard.test(param);
 }
 
 /**
@@ -271,7 +271,7 @@ export function idCard(param) {
  * @returns
  */
 export function email(param) {
-  return pattern.email.test(param)
+  return pattern.email.test(param);
 }
 
 export default {
@@ -291,4 +291,4 @@ export default {
   telephone,
   idCard,
   email
-}
+};

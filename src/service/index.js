@@ -1,5 +1,5 @@
-import moduleA from './modules/moduleA'
+import moduleA from "./modules/moduleA";
 
 export default {
   moduleA
-}
+};

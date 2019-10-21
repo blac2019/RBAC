@@ -20,18 +20,18 @@
 </template>
 
 <script>
-import LayoutNav from './LayoutNav'
+import LayoutNav from "./LayoutNav";
 
-import LayoutHeader from './LayoutHeader'
-import LayoutLogo from './LayoutLogo'
+import LayoutHeader from "./LayoutHeader";
+import LayoutLogo from "./LayoutLogo";
 
-import LayoutBreadcrumb from './LayoutBreadcrumb'
-import LayoutContent from './LayoutContent'
+import LayoutBreadcrumb from "./LayoutBreadcrumb";
+import LayoutContent from "./LayoutContent";
 
-import LayoutFooter from './LayoutFooter'
+import LayoutFooter from "./LayoutFooter";
 
 export default {
-  name: 'Layout',
+  name: "Layout",
 
   components: {
     LayoutNav,
@@ -41,7 +41,7 @@ export default {
     LayoutContent,
     LayoutFooter
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -9,8 +9,8 @@
 
 <script>
 export default {
-  name: 'LayoutHeader'
-}
+  name: "LayoutHeader"
+};
 </script>
 
 <style lang="scss" scoped>

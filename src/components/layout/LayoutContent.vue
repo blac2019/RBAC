@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'layout-content'
-}
+  name: "layout-content"
+};
 </script>
 
 <style>

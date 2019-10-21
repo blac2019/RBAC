@@ -1,22 +1,22 @@
 export default {
-  name: 'focus',
+  name: "focus",
 
   inserted: function(el, binding) {
     if (binding.value) {
-      el.focus()
+      el.focus();
     } else {
-      el.blur()
+      el.blur();
     }
   },
 
   componentUpdated: function(el, binding) {
     if (binding.modifiers.lazy) {
       if (Boolean(binding.value) === Boolean(binding.oldValue)) {
-        return
+        return;
       }
     }
 
-    if (binding.value) el.focus()
-    else el.blur()
+    if (binding.value) el.focus();
+    else el.blur();
   }
-}
+};

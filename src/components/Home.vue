@@ -1,22 +1,23 @@
 <template>
   <div class="home">
     <p>Welcome to wy</p>
-    <el-button type="primary" @click="goLogin()">go login</el-button>
+    <el-button type="primary"
+               @click="goLogin()">go login</el-button>
   </div>
 </template>
 
 <script>
-import wy from '@src/library'
+import wy from "@src/library";
 
 export default {
-  name: 'Home',
+  name: "Home",
 
   methods: {
     goLogin() {
-      this.$router.push(wy.config.SYSTEM.LOGIN_PAGE)
+      this.$router.push(wy.config.SYSTEM.LOGIN_PAGE);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

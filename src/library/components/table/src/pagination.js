@@ -1,16 +1,16 @@
-import { Pagination } from 'element-ui'
+import { Pagination } from "element-ui";
 
 const ExtendPaginationProps = {
   background: {
     type: Boolean,
     default() {
-      return true
+      return true;
     }
   }
-}
+};
 
 export default {
-  name: 'wy-pagination',
+  name: "wy-pagination",
 
   props: {
     ...Pagination.props,
@@ -25,20 +25,20 @@ export default {
       internalPageSizes: this.pageSizes,
       internalTotal: this.total,
       internalLayout: this.layout
-    }
+    };
   },
 
   methods: {
     internalSizeChange(currentPageSize) {
-      this.internalPageSize = currentPageSize
+      this.internalPageSize = currentPageSize;
 
-      return this.$parent.loadData()
+      return this.$parent.loadData();
     },
 
     internalCurrentChange(currentPage) {
-      this.internalCurrentPage = currentPage
+      this.internalCurrentPage = currentPage;
 
-      return this.$parent.loadData()
+      return this.$parent.loadData();
     }
   },
 
@@ -60,14 +60,14 @@ export default {
       on: Object.assign(
         {},
         {
-          'size-change': this.internalSizeChange,
-          'current-change': this.internalCurrentChange
+          "size-change": this.internalSizeChange,
+          "current-change": this.internalCurrentChange
         },
         this.$listeners
       ),
 
       // 扩展 slots
       scopedSlots: this.$scopedSlots
-    })
+    });
   }
-}
+};

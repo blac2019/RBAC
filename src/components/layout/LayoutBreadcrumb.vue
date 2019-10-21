@@ -13,10 +13,8 @@
 
     <div class="layout-breadcrumb-content">
       <div class="layout-breadcrumb-content-left">
-        <el-image
-          style="width: 60px; height: 60px; margin: 0 16px 0 0; border-radius: 50%;"
-          src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-        ></el-image>
+        <el-image style="width: 60px; height: 60px; margin: 0 16px 0 0; border-radius: 50%;"
+                  src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></el-image>
 
         <div>
           <h4>晚上好，天野远子，我猜你可能累了</h4>
@@ -44,7 +42,7 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>

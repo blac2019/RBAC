@@ -1,23 +1,23 @@
-import { TableColumn } from 'element-ui'
+import { TableColumn } from "element-ui";
 
 const ExtendTableColumnProps = {
   align: {
     type: String,
     default() {
-      return 'center'
+      return "center";
     }
   },
 
-  'show-overflow-tooltip': {
+  "show-overflow-tooltip": {
     type: Boolean,
     default() {
-      return false
+      return false;
     }
   }
-}
+};
 
 export default {
-  name: 'wy-table-column',
+  name: "wy-table-column",
 
   props: {
     ...TableColumn.props,
@@ -38,6 +38,6 @@ export default {
 
       // 扩展 slots
       scopedSlots: this.$scopedSlots
-    })
+    });
   }
-}
+};

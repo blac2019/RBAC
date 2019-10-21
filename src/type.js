@@ -1,25 +1,25 @@
 export const USER = {
-    /** token */
-    TOKEN: '',
-}
+  /** token */
+  TOKEN: ""
+};
 
 export const SYSTEM = {
-    /** 系统首页 */
-    MAIN_PAGE: '/home'
-}
+  /** 系统首页 */
+  MAIN_PAGE: "/home"
+};
 
 export const CACHE = {
-    /** local storage */
-    LOCAL: 'localStorage',
+  /** local storage */
+  LOCAL: "localStorage",
 
-    /** session s‘torage */
-    SESSION : 'sessionStorage'
-}
+  /** session s‘torage */
+  SESSION: "sessionStorage"
+};
 
-export default{
-    USER,
+export default {
+  USER,
 
-    SYSTEM,
+  SYSTEM,
 
-    CACHE
-}
+  CACHE
+};

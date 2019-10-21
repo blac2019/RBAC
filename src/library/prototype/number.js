@@ -14,8 +14,8 @@
  * e.g.         1483943989639.toDate()  =>  Mon Jan 09 2017 14:39:49 GMT+0800 (中国标准时间)
  */
 Number.prototype.toDate = function() {
-  return new Date(this)
-}
+  return new Date(this);
+};
 
 /**
  * 数值格式化
@@ -28,15 +28,15 @@ Number.prototype.toDate = function() {
  * @returns
  */
 Number.prototype.formatNum = function(precision = 2, separator) {
-  let num = this
+  let num = this;
   if (!isNaN(parseFloat(num)) && isFinite(num)) {
-    let parts
-    num = Number(num)
-    num = (typeof precision !== 'undefined' ? num.toFixed(precision) : num).toString()
-    parts = num.split('.')
-    parts[0] = parts[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + (separator || ', '))
-    return parts.join('.')
+    let parts;
+    num = Number(num);
+    num = (typeof precision !== "undefined" ? num.toFixed(precision) : num).toString();
+    parts = num.split(".");
+    parts[0] = parts[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + (separator || ", "));
+    return parts.join(".");
   } else {
-    return '-'
+    return "-";
   }
-}
+};

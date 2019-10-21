@@ -1,34 +1,37 @@
 <template>
   <div class="not-found">
     <p>Welcome to wy</p>
-    <el-button type="primary" @click="goHome()">go home</el-button>
+    <el-button type="primary"
+               @click="goHome()">go home</el-button>
     <br />
-    <el-button type="primary" @click="goBack()">go back</el-button>
+    <el-button type="primary"
+               @click="goBack()">go back</el-button>
     <br />
-    <el-button type="primary" @click="goLogin()">go login</el-button>
+    <el-button type="primary"
+               @click="goLogin()">go login</el-button>
   </div>
 </template>
 
 <script>
-import wy from '@src/library'
+import wy from "@src/library";
 
 export default {
-  name: 'NotFound',
+  name: "NotFound",
 
   methods: {
     goLogin() {
-      this.$router.push(wy.config.SYSTEM.LOGIN_PAGE)
+      this.$router.push(wy.config.SYSTEM.LOGIN_PAGE);
     },
 
     goBack() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
 
     goHome() {
-      this.$router.go(wy.config.SYSTEM.MAIN_PAGE)
+      this.$router.go(wy.config.SYSTEM.MAIN_PAGE);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

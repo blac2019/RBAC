@@ -1,30 +1,30 @@
-import { Dialog } from 'element-ui'
+import { Dialog } from "element-ui";
 
 const ExtendDialogProps = {
   top: {
     type: String,
     default() {
-      return '10vh'
+      return "10vh";
     }
   },
 
-  'close-on-click-modal': {
+  "close-on-click-modal": {
     type: Boolean,
     default() {
-      return false
+      return false;
     }
   },
 
   width: {
     type: String,
     default() {
-      return '600px'
+      return "600px";
     }
   }
-}
+};
 
 export default {
-  name: 'wy-dialog',
+  name: "wy-dialog",
 
   props: {
     ...Dialog.props,
@@ -49,6 +49,6 @@ export default {
         scopedSlots: this.$scopedSlots
       },
       this.$slots
-    )
+    );
   }
-}
+};

@@ -13,8 +13,8 @@
 
 <script>
 export default {
-  name: 'LayoutFooter'
-}
+  name: "LayoutFooter"
+};
 </script>
 
 <style lang="scss" scoped>

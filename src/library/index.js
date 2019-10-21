@@ -7,57 +7,58 @@
 /* eslint-disable */
 
 // prototype
-import './prototype/date'
-import './prototype/number'
-import './prototype/string'
+import "./prototype/date";
+import "./prototype/number";
+import "./prototype/string";
 
 // components
-import Table from './components/table'
-import Dialog from './components/dialog'
+import Table from "./components/table";
+import Dialog from "./components/dialog";
 
 // directive
-import drag from './directive/drag'
-import focus from './directive/focus'
+import drag from "./directive/drag";
+import focus from "./directive/focus";
 
 // http
-import http from './http'
+import http from "./http";
 
 // util
-import util from './helper/util'
-import cache from './helper/cache'
-import validate from './helper/validate'
+import util from "./helper/util";
+import cache from "./helper/cache";
+import validate from "./helper/validate";
 
 // service
-import service from '@src/service'
+import service from "@src/service";
 // config
-import config from '@src/config'
+import config from "@src/config";
 // type
-import type from '@src/type'
+import type from "@src/type";
 
 export const install = function(Vue) {
-  const wy = { http, util, cache, validate, config, type, service }
+  const wy = { http, util, cache, validate, config, type, service };
 
   // 暴露全局实例
   // 挂载到 Vue
-  Window.$wy = wy
-  global.$wy = wy
-  Vue.prototype.$wy = wy
+  Window.$wy = wy;
+  global.$wy = wy;
+  Vue.prototype.$wy = wy;
 
   // 注册 component
-  const components = [Table, Dialog]
+  const components = [Table, Dialog];
   components.map(component => {
-    Vue.use(component)
-  })
+    Vue.use(component);
+  });
 
   // 注册 directive
-  const directive = [drag, focus]
+  const directive = [drag, focus];
   directive.map(directive => {
-    Vue.directive(directive.name, directive)
-  })
+    Vue.directive(directive.name, directive);
+  });
 
-  console.log('wy has been installed')
-}
+  console.log("wy has been installed");
+};
 
+/** lib */
 export default {
   /** http 请求类 */
   http,
@@ -82,4 +83,4 @@ export default {
 
   /** vue plugin */
   install
-}
+};

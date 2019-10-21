@@ -1,6 +1,10 @@
 <template>
   <div class="layout-nav">
-    <el-menu unique-opened default-active="2" background-color="#000c17" text-color="#fff" active-text-color="#fff">
+    <el-menu unique-opened
+             default-active="2"
+             background-color="#000c17"
+             text-color="#fff"
+             active-text-color="#fff">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
@@ -35,8 +39,8 @@
 
 <script>
 export default {
-  name: 'LayoutNav'
-}
+  name: "LayoutNav"
+};
 </script>
 
 <style lang="scss" scoped>
