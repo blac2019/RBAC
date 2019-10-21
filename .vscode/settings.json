@@ -1,0 +1,20 @@
+{
+  // editor
+  "editor.tabSize": 2,
+
+  // prettier
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.printWidth": 120,
+
+  // vetur
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": true,
+      "singleQuote": false,
+      "printWidth": 120
+    }
+  }
+}
