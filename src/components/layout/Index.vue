@@ -1,6 +1,6 @@
 <template>
   <el-container class="layout">
-    <el-aside width="260px">
+    <el-aside :width="$wy.$store.state.layout.collapse ? '60px' : '260px'">
       <LayoutLogo class="layout-logo"></LayoutLogo>
       <LayoutNav class="layout-nav"></LayoutNav>
     </el-aside>
@@ -11,7 +11,7 @@
       <el-main>
         <LayoutBreadcrumb class="layout-container-breadcrumb"></LayoutBreadcrumb>
         <LayoutContent class="layout-container-main"></LayoutContent>
-        <el-footer height="100px">
+        <el-footer height="110px">
           <LayoutFooter class="layout-container-footer"></LayoutFooter>
         </el-footer>
       </el-main>
@@ -21,13 +21,10 @@
 
 <script>
 import LayoutNav from "./LayoutNav";
-
 import LayoutHeader from "./LayoutHeader";
 import LayoutLogo from "./LayoutLogo";
-
 import LayoutBreadcrumb from "./LayoutBreadcrumb";
 import LayoutContent from "./LayoutContent";
-
 import LayoutFooter from "./LayoutFooter";
 
 export default {

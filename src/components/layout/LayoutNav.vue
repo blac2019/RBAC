@@ -1,45 +1,69 @@
 <template>
   <div class="layout-nav">
     <el-menu unique-opened
+             :collapse="$wy.$store.state.layout.collapse"
              default-active="2"
-             background-color="#000c17"
+             background-color="#001529"
              text-color="#fff"
-             active-text-color="#fff">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
-        <el-menu-item index="1-4">选项4</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-submenu index="3">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航三</span>
-        </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
-        <el-menu-item index="1-4">选项4</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+             @select="menuSelect">
+
+      <template v-for="menu in menuTree">
+        <el-submenu :key="menu.id"
+                    v-if="menu.children"
+                    :index="menu.id.toString()">
+          <template slot="title">
+            <i class="el-icon-s-home"></i>
+            <span slot="title">{{ menu.name }}</span>
+          </template>
+
+          <el-menu-item :index="menuChildren.path"
+                        :key="menuChildren.id"
+                        v-for="menuChildren in menu.children">
+            {{ menuChildren.name }}
+          </el-menu-item>
+        </el-submenu>
+
+        <el-menu-item v-else
+                      :key="menu.id"
+                      :index="menu.path">
+          <i class="el-icon-s-home"></i>
+          <span slot="title">{{ menu.name }}</span>
+        </el-menu-item>
+      </template>
     </el-menu>
   </div>
 </template>
 
 <script>
+import wy from "@src/library";
+
 export default {
-  name: "LayoutNav"
+  name: "LayoutNav",
+
+  data() {
+    return {
+      menuTree: []
+    };
+  },
+
+  created() {
+    this.renderMenus();
+  },
+
+  methods: {
+    renderMenus() {
+      // Get server data
+      const menus = wy.util.deepClone(wy.config.MENUS);
+      const menuTree = wy.util.toTree(menus, "id", "parentId", "children");
+
+      this.menuTree = menuTree;
+    },
+
+    menuSelect(path) {
+      this.$router.push("/app/" + path);
+      console.log(arguments);
+    }
+  }
 };
 </script>
 
@@ -51,23 +75,6 @@ export default {
 
   /deep/ .el-menu {
     border: 0;
-
-    .el-submenu__title,
-    .el-menu-item {
-      background: #001529 !important;
-    }
-
-    .el-submenu {
-      .el-menu-item {
-        background: #000c17 !important;
-      }
-    }
-
-    .el-menu-item {
-      &.is-active {
-        background: #2f54eb !important;
-      }
-    }
   }
 }
 </style>
