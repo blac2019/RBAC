@@ -1,22 +1,38 @@
 <template>
   <div class="layout-header">
-    <div class="layout-header-control"
-         @click="collapse">
+    <div class="layout-header-control" @click="collapse">
       <i class="el-icon-s-operation"></i>
     </div>
     <div class="layout-header-user">
-      <span>User</span>
+      <span>{{ user.name }}</span>
+      <el-button type="text" @click="signOut">Sign Out</el-button>
     </div>
   </div>
 </template>
 
 <script>
+import wy from "@src/library";
+
 export default {
   name: "LayoutHeader",
+
+  data() {
+    return {
+      user: wy.cache.get(wy.type.USER.INFO)
+    };
+  },
 
   methods: {
     collapse() {
       this.$store.commit("layout/setCollapse", !this.$store.state.layout.collapse);
+    },
+
+    signOut() {
+      // 移除登录信息
+      wy.cache.remove(wy.type.USER.TOKEN);
+      wy.cache.remove(wy.type.USER.INFO);
+
+      window.location.href = "/";
     }
   }
 };

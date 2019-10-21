@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-content">
     <router-view class="router-view"></router-view>
   </div>
 </template>
@@ -10,5 +10,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.layout-content {
+  .router-view {
+    border-radius: 8px;
+    background: #fff;
+    padding: 16px;
+  }
+}
 </style>

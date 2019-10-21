@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  height: 100vh;
+  height: 100%;
   background: #f0f2f5;
 
   .el-header,

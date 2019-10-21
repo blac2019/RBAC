@@ -10,12 +10,14 @@
 
     <div class="layout-breadcrumb-content">
       <div class="layout-breadcrumb-content-left">
-        <el-image style="width: 60px; height: 60px; margin: 0 16px 0 0; border-radius: 50%;"
-                  src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></el-image>
+        <el-image
+          style="width: 60px; height: 60px; margin: 0 16px 0 0; border-radius: 50%;"
+          src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+        ></el-image>
 
         <div>
-          <h4>晚上好，XXXXXX</h4>
-          <h4>前端工程师 | Design - Color - VUE</h4>
+          <h4>晚上好，{{ user.name }}</h4>
+          <h4>前端工程师 | Design - Color - Vue</h4>
         </div>
       </div>
       <div class="layout-breadcrumb-content-right">
@@ -39,7 +41,15 @@
 </template>
 
 <script>
-export default {};
+import wy from "@src/library";
+
+export default {
+  data() {
+    return {
+      user: wy.cache.get(wy.type.USER.INFO)
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>

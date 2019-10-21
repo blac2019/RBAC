@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <wy-table ref="table"
-              height="500px">
-      <wy-table-column label="性别"
-                       prop="name"></wy-table-column>
+  <div class="module-2">
+    <wy-table ref="table" height="500px">
+      <wy-table-column label="性别" prop="name"></wy-table-column>
     </wy-table>
   </div>
 </template>
@@ -31,5 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.module-2 {
+}
 </style>

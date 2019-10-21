@@ -1,31 +1,28 @@
 <template>
   <div class="layout-nav">
-    <el-menu unique-opened
-             :collapse="$wy.$store.state.layout.collapse"
-             default-active="2"
-             background-color="#001529"
-             text-color="#fff"
-             @select="menuSelect">
-
+    <el-menu
+      unique-opened
+      :default-active="$route.path.replace('/app/', '')"
+      :collapse="$wy.$store.state.layout.collapse"
+      background-color="#001529"
+      text-color="#fff"
+      @select="menuSelect"
+    >
       <template v-for="menu in menuTree">
-        <el-submenu :key="menu.id"
-                    v-if="menu.children"
-                    :index="menu.id.toString()">
+        <el-submenu :key="menu.id" v-if="menu.children" :index="menu.id.toString()">
           <template slot="title">
             <i class="el-icon-s-home"></i>
             <span slot="title">{{ menu.name }}</span>
           </template>
 
-          <el-menu-item :index="menuChildren.path"
-                        :key="menuChildren.id"
-                        v-for="menuChildren in menu.children">
-            {{ menuChildren.name }}
-          </el-menu-item>
+          <el-menu-item
+            :index="menuChildren.path"
+            :key="menuChildren.id"
+            v-for="menuChildren in menu.children"
+          >{{ menuChildren.name }}</el-menu-item>
         </el-submenu>
 
-        <el-menu-item v-else
-                      :key="menu.id"
-                      :index="menu.path">
+        <el-menu-item v-else :key="menu.id" :index="menu.path">
           <i class="el-icon-s-home"></i>
           <span slot="title">{{ menu.name }}</span>
         </el-menu-item>
@@ -53,7 +50,7 @@ export default {
   methods: {
     renderMenus() {
       // Get server data
-      const menus = wy.util.deepClone(wy.config.MENUS);
+      const menus = wy.cache.get(wy.type.USER.INFO).menus;
       const menuTree = wy.util.toTree(menus, "id", "parentId", "children");
 
       this.menuTree = menuTree;

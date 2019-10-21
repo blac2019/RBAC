@@ -1,14 +1,30 @@
 import wy from "@src/library";
 
-export const hasLogin = () => {
+export /**
+ * 验证登录状态
+ *
+ * @returns
+ */
+const hasLogin = () => {
   return wy.cache.get(wy.type.USER.TOKEN);
 };
 
-export const hasRenderRoutes = () => {
+export /**
+ * 验证路由渲染状态
+ *
+ * @returns
+ */
+const hasRenderRoutes = () => {
   return wy.hasRenderRoutes;
 };
 
-export const renderRoutes = $router => {
+export /**
+ * 渲染路由
+ *
+ * @param {*} $router
+ * @returns
+ */
+const renderRoutes = $router => {
   const menuTreeToRoutes = (menuTree, routes = []) => {
     menuTree.forEach(menu => {
       if (menu.hasOwnProperty("children")) {
@@ -25,7 +41,7 @@ export const renderRoutes = $router => {
     return routes;
   };
 
-  const menus = wy.util.deepClone(wy.config.MENUS);
+  const menus = wy.cache.get(wy.type.USER.INFO).menus;
   const menuTree = wy.util.toTree(menus, "id", "parentId", "children");
 
   /** 组件路由配置 */

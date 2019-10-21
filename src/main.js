@@ -9,7 +9,7 @@ Vue.use(wy.install);
 
 // UI
 import ElementUI from "element-ui";
-Vue.use(ElementUI, { size: "mini" });
+Vue.use(ElementUI, { size: "small" });
 
 // css
 import "@src/assets/css/index.scss";

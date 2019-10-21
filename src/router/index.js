@@ -12,27 +12,45 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  // 当前用户未登录
-  if (!routeUtil.hasLogin()) {
-    // 记录当前跳转页
-    $wy.Referer = to;
-
-    next(wy.config.SYSTEM.LOGIN_PAGE);
-
-    return;
-  }
   // 当前用户已登录, 但未渲染路由
-  else if (!routeUtil.hasRenderRoutes()) {
-    routeUtil.renderRoutes(router);
+  if (routeUtil.hasLogin() && !routeUtil.hasRenderRoutes()) {
+    // Get user info by token
+    wy.service.menu.get().then(() => {
+      const mockUserInfo = {
+        name: "Mock User Name",
+        sex: "男",
+        age: "12",
+        menus: wy.config.MENUS
+      };
 
-    next({
-      path: to.path
+      wy.cache.set(wy.type.USER.INFO, mockUserInfo, wy.type.CACHE.LOCAL);
+
+      routeUtil.renderRoutes(router);
+
+      return next({
+        path: to.path
+      });
     });
 
     return;
   }
 
-  next();
+  // 当前地址不需要授权登录
+  if (!to.meta.hasOwnProperty("auth")) {
+    return next();
+  }
+
+  // 当前用户未登录
+  if (!routeUtil.hasLogin()) {
+    // 记录当前跳转页
+    $wy.Referer = to;
+
+    return next({
+      path: wy.config.SYSTEM.LOGIN_PAGE
+    });
+  }
+
+  return next();
 });
 
 export default router;

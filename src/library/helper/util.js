@@ -168,26 +168,32 @@ export function success(msg = "温馨提示", title = "温馨提示", type = "su
 }
 
 /**
- * confirm 弹出提示
+ * 弹出提示消息
  *
  * @export
- * @param {string} [msg='温馨提示']
- * @param {string} [title='温馨提示']
- * @param {string} [options={ type: 'info', confirmButtonText: '确定', cancelButtonText: '取消' }]
- * @param {*} [confirmCallBack=() => {}]
- * @param {*} [cancelCallBack=() => {}]
+ * @param {*} [{
+ *   title = "温馨提示",
+ *   meesage = "",
+ *   type = "info",
+ *   confirmButtonText = "确定",
+ *   cancelButtonText = "取消",
+ *   confirmCallBack = () => {},
+ *   cancelCallBack = () => {}
+ * }={}]
  */
-export function confirm(
-  msg = "温馨提示",
+export function confirm({
   title = "温馨提示",
-  options = { type: "info", confirmButtonText: "确定", cancelButtonText: "取消" },
-  confirmCallBack,
-  cancelCallBack
-) {
-  $wy.$confirm(msg, title, {
-    confirmButtonText: options.confirmButtonText,
-    cancelButtonText: options.cancelButtonText,
-    type: options.type,
+  message = "",
+  type = "info",
+  confirmButtonText = "确定",
+  cancelButtonText = "取消",
+  confirmCallBack = () => {},
+  cancelCallBack = () => {}
+} = {}) {
+  $wy.$confirm(message, title, {
+    confirmButtonText: confirmButtonText,
+    cancelButtonText: cancelButtonText,
+    type: type,
     callback: action => {
       if (action === "confirm") {
         confirmCallBack && confirmCallBack();

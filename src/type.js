@@ -1,6 +1,9 @@
 export const USER = {
   /** token */
-  TOKEN: ""
+  TOKEN: "token",
+
+  /** info */
+  INFO: "info"
 };
 
 export const SYSTEM = {

@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <p>Welcome to wy</p>
-    <el-button type="primary"
-               @click="goLogin()">go login</el-button>
+    <el-button type="primary" @click="goLogin()">go login</el-button>
   </div>
 </template>
 
@@ -22,6 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,14 +1,9 @@
 <template>
   <div class="not-found">
-    <p>Welcome to wy</p>
-    <el-button type="primary"
-               @click="goHome()">go home</el-button>
+    <h1>404 ， 暂无权限访问</h1>
+
     <br />
-    <el-button type="primary"
-               @click="goBack()">go back</el-button>
-    <br />
-    <el-button type="primary"
-               @click="goLogin()">go login</el-button>
+    <el-button type="primary" @click="goLogin()">go login</el-button>
   </div>
 </template>
 
@@ -21,14 +16,6 @@ export default {
   methods: {
     goLogin() {
       this.$router.push(wy.config.SYSTEM.LOGIN_PAGE);
-    },
-
-    goBack() {
-      this.$router.go(-1);
-    },
-
-    goHome() {
-      this.$router.go(wy.config.SYSTEM.MAIN_PAGE);
     }
   }
 };
@@ -36,6 +23,8 @@ export default {
 
 <style lang="scss" scoped>
 .not-found {
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
